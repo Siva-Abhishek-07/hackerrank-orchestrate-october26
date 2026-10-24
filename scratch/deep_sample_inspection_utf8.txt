@@ -1,0 +1,441 @@
+
+=======================================================
+CASE: case_01 | User: user_01 (amina.elmasri@gmail.com) | Reported: COMPLETE @ 2026-08-20T16:42:00Z | Audit: 2026-09-03T11:30:00Z
+Status: COMPLETE | Steps Count: 1
+  Step 1  | VERIFICATION | account_service      | account_001          | VERIFY_RECORD_ABSENT      | ABSENT     | evidence_54
+  System activities for these resources (1):
+    [activity_3342] 2026-08-20T16:41:43Z | DELETE_RECORD        | deletion_worker -> account_service | account_001 | SUCCESS | Deletion worker reported the requested operation as completed. Target resource: account_001.
+
+=======================================================
+CASE: case_02 | User: user_02 (mateo.rios@outlook.com) | Reported: PARTIALLY_COMPLETE @ 2026-08-22T07:25:00Z | Audit: 2026-09-04T15:00:00Z
+Status: COMPLETE | Steps Count: 1
+  Step 1  | VERIFICATION | account_service      | account_002          | VERIFY_RECORD_ABSENT      | ABSENT     | evidence_54
+  System activities for these resources (1):
+    [activity_3376] 2026-08-22T07:30:03Z | DELETE_RECORD        | deletion_worker -> account_service | account_002 | PARTIAL | Deletion worker completed some internal work but could not confirm the final state. Target resource: account_002.
+
+=======================================================
+CASE: case_03 | User: user_43 (l.fontaine46@yahoo.com) | Reported: COMPLETE @ 2026-09-15T11:00:00Z | Audit: 2026-09-26T11:00:00Z
+Status: COMPLETE | Steps Count: 3
+  Step 1  | VERIFICATION | account_service      | account_7566         | VERIFY_RECORD_ABSENT      | ABSENT     | evidence_94
+  Step 2  | VERIFICATION | security_service     | audit_record_2016    | VERIFY_RECORD_PRESENT     | PRESENT    | evidence_94
+  Step 3  | VERIFICATION | analytics_platform   | analytics_9406       | VERIFY_RECORD_ANONYMIZED  | ANONYMIZED | evidence_94
+  System activities for these resources (2):
+    [activity_3851] 2026-09-15T10:07:35Z | DELETE_RECORD        | deletion_worker -> account_service | account_7566 | SUCCESS | Deletion worker submitted primary profile account_7566 to account_service.
+    [activity_3852] 2026-09-15T10:31:16Z | ANONYMIZE_RECORD     | deletion_worker -> analytics_platform | analytics_9406 | SUCCESS | Policy action completed for analytics_9406.
+
+=======================================================
+CASE: case_04 | User: user_04 (thandiwe.n@gmail.com) | Reported: COMPLETE @ 2026-08-27T08:54:00Z | Audit: 2026-09-07T10:20:00Z
+Status: COMPLETE | Steps Count: 2
+  Step 1  | VERIFICATION | account_service      | account_004          | VERIFY_RECORD_ABSENT      | ABSENT     | evidence_54
+  Step 2  | VERIFICATION | analytics_platform   | analytics_901        | VERIFY_RECORD_ANONYMIZED  | ANONYMIZED | evidence_56
+  System activities for these resources (1):
+    [activity_3463] 2026-08-27T08:47:41Z | ANONYMIZE_RECORD     | deletion_worker -> analytics_platform | analytics_901 | SUCCESS | Deletion worker reported the requested operation as completed. Target resource: analytics_901.
+
+=======================================================
+CASE: case_05 | User: user_05 (leila.haddad@yahoo.com) | Reported: COMPLETE @ 2026-08-28T09:03:00Z | Audit: 2026-09-08T13:40:00Z
+Status: INCOMPLETE | Steps Count: 3
+  Step 1  | FINDING      | account_service      | account_005          | REPORT_REMAINING_RECORD   | PRESENT    | evidence_54
+  Step 2  | REMEDIATION  | account_service      | account_005          | DELETE_RECORD             | ABSENT     | 
+  Step 3  | VERIFICATION | account_service      | account_005          | VERIFY_RECORD_ABSENT      | ABSENT     | 
+  System activities for these resources (2):
+    [activity_3482] 2026-08-28T09:11:01Z | DELETE_RECORD        | deletion_worker -> account_service | account_005 | SUCCESS | Deletion worker reported the requested operation as completed. Target resource: account_005.
+    [activity_3483] 2026-08-28T09:11:09Z | SYNC_RECORD          | account_service -> account_failover_replica | account_005 | SUCCESS | Replication worker reported its final checkpoint. Target resource: account_005.
+
+=======================================================
+CASE: case_06 | User: user_06 (jonas.berg@outlook.com) | Reported: PARTIALLY_COMPLETE @ 2026-08-30T17:12:00Z | Audit: 2026-09-10T09:15:00Z
+Status: INCOMPLETE | Steps Count: 4
+  Step 1  | FINDING      | search_service       | search_001           | REPORT_REMAINING_RECORD   | PRESENT    | evidence_57
+  Step 2  | REMEDIATION  | search_service       | search_001           | DELETE_RECORD             | ABSENT     | 
+  Step 3  | VERIFICATION | account_service      | account_006          | VERIFY_RECORD_ABSENT      | ABSENT     | 
+  Step 4  | VERIFICATION | search_service       | search_001           | VERIFY_RECORD_ABSENT      | ABSENT     | 
+  System activities for these resources (2):
+    [activity_3545] 2026-08-30T17:08:20Z | DELETE_RECORD        | deletion_worker -> account_service | account_006 | SUCCESS | Deletion worker reported the requested operation as completed. Target resource: account_006.
+    [activity_3546] 2026-08-30T17:21:43Z | DELETE_RECORD        | deletion_worker -> search_service | search_001 | FAILED | Deletion worker stopped after the target system returned an error. Target resource: search_001.
+
+=======================================================
+CASE: case_07 | User: user_07 (priya.raman@gmail.com) | Reported: COMPLETE @ 2026-09-01T19:30:00Z | Audit: 2026-09-12T08:00:00Z
+Status: INCOMPLETE | Steps Count: 4
+  Step 1  | FINDING      | support_platform     | support_001          | REPORT_REMAINING_RECORD   | PRESENT    | evidence_58
+  Step 2  | REMEDIATION  | support_platform     | support_001          | DELETE_RECORD             | ABSENT     | 
+  Step 3  | VERIFICATION | account_service      | account_007          | VERIFY_RECORD_ABSENT      | ABSENT     | 
+  Step 4  | VERIFICATION | support_platform     | support_001          | VERIFY_RECORD_ABSENT      | ABSENT     | 
+  System activities for these resources (1):
+    [activity_3590] 2026-09-01T19:28:39Z | DELETE_RECORD        | deletion_worker -> account_service | account_007 | SUCCESS | Deletion worker reported the requested operation as completed. Target resource: account_007.
+
+=======================================================
+CASE: case_08 | User: user_08 (gabriel.costa@proton.me) | Reported: PARTIALLY_COMPLETE @ 2026-08-31T13:44:00Z | Audit: 2026-09-14T16:10:00Z
+Status: INCOMPLETE | Steps Count: 4
+  Step 1  | FINDING      | export_service       | export_001           | REPORT_REMAINING_RECORD   | PRESENT    | evidence_59
+  Step 2  | REMEDIATION  | export_service       | export_001           | DELETE_RECORD             | ABSENT     | 
+  Step 3  | VERIFICATION | account_service      | account_008          | VERIFY_RECORD_ABSENT      | ABSENT     | 
+  Step 4  | VERIFICATION | export_service       | export_001           | VERIFY_RECORD_ABSENT      | ABSENT     | 
+  System activities for these resources (2):
+    [activity_3554] 2026-08-31T13:48:58Z | DELETE_RECORD        | deletion_worker -> account_service | account_008 | SUCCESS | Deletion worker reported the requested operation as completed. Target resource: account_008.
+    [activity_3555] 2026-08-31T13:49:22Z | DELETE_RECORD        | deletion_worker -> export_service | export_001 | FAILED | Deletion worker stopped after the target system returned an error. Target resource: export_001.
+
+=======================================================
+CASE: case_09 | User: user_61 (k.appiah88@gmail.com) | Reported: NOT_STARTED @ 2026-09-07T09:00:00Z | Audit: 2026-09-16T09:00:00Z
+Status: INCOMPLETE | Steps Count: 5
+  Step 1  | FINDING      | backup_service       | backup_4978          | REPORT_RESTORE_RISK       | ACTIVE     | evidence_93
+  Step 2  | REMEDIATION  | backup_service       | backup_4978          | BLOCK_RESTORE             | BLOCKED    | 
+  Step 3  | VERIFICATION | account_service      | account_3960         | VERIFY_RECORD_ABSENT      | ABSENT     | 
+  Step 4  | VERIFICATION | security_service     | audit_record_4902    | VERIFY_RECORD_PRESENT     | PRESENT    | 
+  Step 5  | VERIFICATION | backup_service       | backup_4978          | VERIFY_RESTORE_BLOCKED    | BLOCKED    | 
+  System activities for these resources (2):
+    [activity_3703] 2026-09-07T07:55:18Z | DELETE_RECORD        | deletion_worker -> account_service | account_3960 | FAILED | Deletion worker submitted primary profile account_3960 to account_service.
+    [activity_3709] 2026-09-07T09:51:10Z | CHECK_RESTORE_ACCESS | deletion_worker -> backup_service | backup_4978 | SUCCESS | Restore-access check confirmed that archive backup_4978 can still be restored.
+
+=======================================================
+CASE: case_10 | User: user_10 (nadia.ionescu@yahoo.com) | Reported: COMPLETE @ 2026-09-02T10:08:00Z | Audit: 2026-09-18T12:25:00Z
+Status: INCOMPLETE | Steps Count: 4
+  Step 1  | FINDING      | support_platform     | support_002          | REPORT_REMAINING_RECORD   | PRESENT    | evidence_61
+  Step 2  | REMEDIATION  | support_platform     | support_002          | DELETE_RECORD             | ABSENT     | 
+  Step 3  | VERIFICATION | account_service      | account_010          | VERIFY_RECORD_ABSENT      | ABSENT     | 
+  Step 4  | VERIFICATION | support_platform     | support_002          | VERIFY_RECORD_ABSENT      | ABSENT     | 
+  System activities for these resources (2):
+    [activity_3595] 2026-09-02T10:08:37Z | DELETE_RECORD        | deletion_worker -> account_service | account_010 | SUCCESS | Deletion worker reported the requested operation as completed. Target resource: account_010.
+    [activity_3596] 2026-09-02T10:09:01Z | DELETE_RECORD        | deletion_worker -> support_platform | support_002 | SUCCESS | Deletion worker reported the requested operation as completed. Target resource: support_002.
+
+=======================================================
+CASE: case_11 | User: user_32 (novak.tomasz@icloud.com) | Reported: COMPLETE @ 2026-09-12T12:00:00Z | Audit: 2026-10-01T12:00:00Z
+Status: INCOMPLETE | Steps Count: 14
+  Step 1  | FINDING      | search_service       | search_052           | REPORT_REMAINING_RECORD   | PRESENT    | evidence_03
+  Step 2  | FINDING      | analytics_platform   | analytics_2034       | REPORT_EXPOSED_PII        | PRESENT    | evidence_03
+  Step 3  | FINDING      | support_platform     | support_864          | REPORT_EXPOSED_PII        | PRESENT    | evidence_03
+  Step 4  | FINDING      | integration_service  | data_flow_9522       | REPORT_ACTIVE_DATA_FLOW   | ACTIVE     | evidence_03
+  Step 5  | REMEDIATION  | integration_service  | data_flow_9522       | DISABLE_DATA_FLOW         | DISABLED   | 
+  Step 6  | REMEDIATION  | search_service       | search_052           | DELETE_RECORD             | ABSENT     | 
+  Step 7  | REMEDIATION  | support_platform     | support_864          | REDACT_RECORD             | REDACTED   | 
+  Step 8  | REMEDIATION  | analytics_platform   | analytics_2034       | ANONYMIZE_RECORD          | ANONYMIZED | 
+  Step 9  | VERIFICATION | account_service      | account_4248         | VERIFY_RECORD_ABSENT      | ABSENT     | 
+  Step 10 | VERIFICATION | search_service       | search_052           | VERIFY_RECORD_ABSENT      | ABSENT     | 
+  Step 11 | VERIFICATION | security_service     | audit_record_9394    | VERIFY_RECORD_PRESENT     | PRESENT    | 
+  Step 12 | VERIFICATION | support_platform     | support_864          | VERIFY_RECORD_REDACTED    | REDACTED   | 
+  Step 13 | VERIFICATION | analytics_platform   | analytics_2034       | VERIFY_RECORD_ANONYMIZED  | ANONYMIZED | 
+  Step 14 | VERIFICATION | integration_service  | data_flow_9522       | VERIFY_DATA_FLOW_DISABLED | DISABLED   | 
+  System activities for these resources (5):
+    [activity_3801] 2026-09-12T11:04:43Z | DELETE_RECORD        | deletion_worker -> account_service | account_4248 | SUCCESS | Deletion worker submitted primary profile account_4248 to account_service.
+    [activity_3814] 2026-09-12T12:55:35Z | DELETE_RECORD        | deletion_worker -> search_service | search_052 | FAILED | Deletion worker received the final result for search_052 from search_service.
+    [activity_3815] 2026-09-12T13:14:05Z | REDACT_RECORD        | deletion_worker -> support_platform | support_864 | FAILED | Deletion worker received the final result for support_864 from support_platform.
+    [activity_3816] 2026-09-12T13:33:34Z | ANONYMIZE_RECORD     | deletion_worker -> analytics_platform | analytics_2034 | FAILED | Deletion worker received the final result for analytics_2034 from analytics_platform.
+    [activity_3817] 2026-09-12T13:52:04Z | CHECK_DATA_FLOW      | deletion_worker -> integration_service | data_flow_9522 | SUCCESS | Connector status check confirmed that data flow data_flow_9522 remains enabled.
+
+=======================================================
+CASE: case_12 | User: user_12 (minjun.kim@gmail.com) | Reported: COMPLETE @ 2026-08-25T12:00:00Z | Audit: 2026-09-15T12:00:00Z
+Status: INCOMPLETE | Steps Count: 5
+  Step 1  | FINDING      | analytics_platform   | analytics_9914       | REPORT_REMAINING_RECORD   | PRESENT    | evidence_01
+  Step 2  | REMEDIATION  | analytics_platform   | analytics_9914       | DELETE_RECORD             | ABSENT     | 
+  Step 3  | VERIFICATION | account_service      | account_9797         | VERIFY_RECORD_ABSENT      | ABSENT     | 
+  Step 4  | VERIFICATION | analytics_platform   | analytics_9914       | VERIFY_RECORD_ABSENT      | ABSENT     | 
+  Step 5  | VERIFICATION | security_service     | audit_record_2945    | VERIFY_RECORD_PRESENT     | PRESENT    | 
+  System activities for these resources (2):
+    [activity_3432] 2026-08-25T11:07:59Z | DELETE_RECORD        | deletion_worker -> account_service | account_9797 | SUCCESS | Deletion worker submitted primary profile account_9797 to account_service.
+    [activity_3435] 2026-08-25T12:53:51Z | DELETE_RECORD        | deletion_worker -> analytics_platform | analytics_9914 | FAILED | Deletion worker received the final result for analytics_9914 from analytics_platform.
+
+=======================================================
+CASE: case_13 | User: user_33 (noor-khalil@proton.me) | Reported: NOT_STARTED @ 2026-09-09T12:00:00Z | Audit: 2026-10-01T12:00:00Z
+Status: INCOMPLETE | Steps Count: 8
+  Step 1  | FINDING      | search_service       | search_1308          | REPORT_REMAINING_RECORD   | PRESENT    | evidence_03
+  Step 2  | FINDING      | support_platform     | support_4218         | REPORT_REMAINING_RECORD   | PRESENT    | evidence_03
+  Step 3  | REMEDIATION  | search_service       | search_1308          | DELETE_RECORD             | ABSENT     | 
+  Step 4  | REMEDIATION  | support_platform     | support_4218         | DELETE_RECORD             | ABSENT     | 
+  Step 5  | VERIFICATION | account_service      | account_9335         | VERIFY_RECORD_ABSENT      | ABSENT     | 
+  Step 6  | VERIFICATION | search_service       | search_1308          | VERIFY_RECORD_ABSENT      | ABSENT     | 
+  Step 7  | VERIFICATION | support_platform     | support_4218         | VERIFY_RECORD_ABSENT      | ABSENT     | 
+  Step 8  | VERIFICATION | security_service     | audit_record_4816    | VERIFY_RECORD_PRESENT     | PRESENT    | 
+  System activities for these resources (3):
+    [activity_3739] 2026-09-09T10:53:28Z | DELETE_RECORD        | deletion_worker -> account_service | account_9335 | FAILED | Deletion worker submitted primary profile account_9335 to account_service.
+    [activity_3752] 2026-09-09T12:39:20Z | DELETE_RECORD        | deletion_worker -> support_platform | support_4218 | FAILED | Deletion worker received the final result for support_4218 from support_platform.
+    [activity_3756] 2026-09-09T12:58:49Z | DELETE_RECORD        | deletion_worker -> search_service | search_1308 | FAILED | Deletion worker received the final result for search_1308 from search_service.
+
+=======================================================
+CASE: case_14 | User: user_37 (y.tanaka32@gmail.com) | Reported: COMPLETE @ 2026-09-06T12:00:00Z | Audit: 2026-10-01T12:00:00Z
+Status: INCOMPLETE | Steps Count: 5
+  Step 1  | FINDING      | backup_service       | backup_3870          | REPORT_RESTORE_RISK       | ACTIVE     | evidence_03
+  Step 2  | REMEDIATION  | backup_service       | backup_3870          | BLOCK_RESTORE             | BLOCKED    | 
+  Step 3  | VERIFICATION | account_service      | account_3677         | VERIFY_RECORD_ABSENT      | ABSENT     | 
+  Step 4  | VERIFICATION | security_service     | audit_record_987     | VERIFY_RECORD_PRESENT     | PRESENT    | 
+  Step 5  | VERIFICATION | backup_service       | backup_3870          | VERIFY_RESTORE_BLOCKED    | BLOCKED    | 
+  System activities for these resources (2):
+    [activity_3686] 2026-09-06T11:11:02Z | DELETE_RECORD        | deletion_worker -> account_service | account_3677 | SUCCESS | Deletion worker submitted primary profile account_3677 to account_service.
+    [activity_3690] 2026-09-06T12:44:53Z | CHECK_RESTORE_ACCESS | deletion_worker -> backup_service | backup_3870 | SUCCESS | Restore-access check confirmed that archive backup_3870 can still be restored.
+
+=======================================================
+CASE: case_15 | User: user_15 (lucia-torres@gmail.com) | Reported: COMPLETE @ 2026-08-22T12:00:00Z | Audit: 2026-09-15T12:00:00Z
+Status: INCOMPLETE | Steps Count: 5
+  Step 1  | FINDING      | integration_service  | data_flow_9846       | REPORT_ACTIVE_DATA_FLOW   | ACTIVE     | evidence_01
+  Step 2  | REMEDIATION  | integration_service  | data_flow_9846       | DISABLE_DATA_FLOW         | DISABLED   | 
+  Step 3  | VERIFICATION | account_service      | account_4745         | VERIFY_RECORD_ABSENT      | ABSENT     | 
+  Step 4  | VERIFICATION | security_service     | audit_record_1596    | VERIFY_RECORD_PRESENT     | PRESENT    | 
+  Step 5  | VERIFICATION | integration_service  | data_flow_9846       | VERIFY_DATA_FLOW_DISABLED | DISABLED   | 
+  System activities for these resources (2):
+    [activity_3382] 2026-08-22T11:05:18Z | DELETE_RECORD        | deletion_worker -> account_service | account_4745 | SUCCESS | Deletion worker submitted primary profile account_4745 to account_service.
+    [activity_3386] 2026-08-22T12:51:10Z | CHECK_DATA_FLOW      | deletion_worker -> integration_service | data_flow_9846 | SUCCESS | Connector status check confirmed that data flow data_flow_9846 remains enabled.
+
+=======================================================
+CASE: case_16 | User: user_53 (diya.k4436@outlook.com) | Reported: NOT_STARTED @ 2026-09-01T10:00:00Z | Audit: 2026-09-21T10:00:00Z
+Status: INCOMPLETE | Steps Count: 7
+  Step 1  | FINDING      | account_service      | account_994          | REPORT_REMAINING_RECORD   | PRESENT    | evidence_05
+  Step 2  | FINDING      | search_service       | search_1007          | REPORT_REMAINING_RECORD   | PRESENT    | evidence_05
+  Step 3  | REMEDIATION  | account_service      | account_994          | DELETE_RECORD             | ABSENT     | 
+  Step 4  | REMEDIATION  | search_service       | search_1007          | DELETE_RECORD             | ABSENT     | 
+  Step 5  | VERIFICATION | account_service      | account_994          | VERIFY_RECORD_ABSENT      | ABSENT     | 
+  Step 6  | VERIFICATION | search_service       | search_1007          | VERIFY_RECORD_ABSENT      | ABSENT     | 
+  Step 7  | VERIFICATION | security_service     | audit_record_9528    | VERIFY_RECORD_PRESENT     | PRESENT    | 
+  System activities for these resources (3):
+    [activity_3571] 2026-09-01T08:50:41Z | DELETE_RECORD        | deletion_worker -> account_service | account_994 | FAILED | Deletion worker submitted primary profile account_994 to account_service.
+    [activity_3577] 2026-09-01T10:41:33Z | SYNC_RECORD          | account_service -> account_replication_cluster | account_994 | SUCCESS | Replication worker reported its final checkpoint for account_994.
+    [activity_3580] 2026-09-01T11:00:03Z | DELETE_RECORD        | deletion_worker -> search_service | search_1007 | SUCCESS | Deletion worker received the final result for search_1007 from search_service.
+
+=======================================================
+CASE: case_17 | User: user_17 (leonie.g9352@outlook.com) | Reported: NOT_STARTED @ 2026-08-22T12:00:00Z | Audit: 2026-09-15T12:00:00Z
+Status: INCOMPLETE | Steps Count: 5
+  Step 1  | FINDING      | backup_service       | backup_3245          | REPORT_RESTORE_RISK       | ACTIVE     | evidence_01
+  Step 2  | REMEDIATION  | backup_service       | backup_3245          | BLOCK_RESTORE             | BLOCKED    | 
+  Step 3  | VERIFICATION | account_service      | account_4092         | VERIFY_RECORD_ABSENT      | ABSENT     | 
+  Step 4  | VERIFICATION | security_service     | audit_record_1797    | VERIFY_RECORD_PRESENT     | PRESENT    | 
+  Step 5  | VERIFICATION | backup_service       | backup_3245          | VERIFY_RESTORE_BLOCKED    | BLOCKED    | 
+  System activities for these resources (2):
+    [activity_3383] 2026-08-22T11:14:20Z | DELETE_RECORD        | deletion_worker -> account_service | account_4092 | FAILED | Deletion worker submitted primary profile account_4092 to account_service.
+    [activity_3385] 2026-08-22T12:42:12Z | CHECK_RESTORE_ACCESS | deletion_worker -> backup_service | backup_3245 | SUCCESS | Restore-access check confirmed that archive backup_3245 can still be restored.
+
+=======================================================
+CASE: case_18 | User: user_50 (mori.ren@gmail.com) | Reported: COMPLETE @ 2026-09-09T11:00:00Z | Audit: 2026-09-26T11:00:00Z
+Status: INCOMPLETE | Steps Count: 14
+  Step 1  | FINDING      | search_service       | search_4013          | REPORT_REMAINING_RECORD   | PRESENT    | evidence_94
+  Step 2  | FINDING      | analytics_platform   | analytics_037        | REPORT_EXPOSED_PII        | PRESENT    | evidence_94
+  Step 3  | FINDING      | support_platform     | support_5569         | REPORT_EXPOSED_PII        | PRESENT    | evidence_94
+  Step 4  | FINDING      | integration_service  | data_flow_4890       | REPORT_ACTIVE_DATA_FLOW   | ACTIVE     | evidence_94
+  Step 5  | REMEDIATION  | integration_service  | data_flow_4890       | DISABLE_DATA_FLOW         | DISABLED   | 
+  Step 6  | REMEDIATION  | search_service       | search_4013          | DELETE_RECORD             | ABSENT     | 
+  Step 7  | REMEDIATION  | support_platform     | support_5569         | REDACT_RECORD             | REDACTED   | 
+  Step 8  | REMEDIATION  | analytics_platform   | analytics_037        | ANONYMIZE_RECORD          | ANONYMIZED | 
+  Step 9  | VERIFICATION | account_service      | account_5521         | VERIFY_RECORD_ABSENT      | ABSENT     | 
+  Step 10 | VERIFICATION | search_service       | search_4013          | VERIFY_RECORD_ABSENT      | ABSENT     | 
+  Step 11 | VERIFICATION | security_service     | audit_record_6645    | VERIFY_RECORD_PRESENT     | PRESENT    | 
+  Step 12 | VERIFICATION | support_platform     | support_5569         | VERIFY_RECORD_REDACTED    | REDACTED   | 
+  Step 13 | VERIFICATION | analytics_platform   | analytics_037        | VERIFY_RECORD_ANONYMIZED  | ANONYMIZED | 
+  Step 14 | VERIFICATION | integration_service  | data_flow_4890       | VERIFY_DATA_FLOW_DISABLED | DISABLED   | 
+  System activities for these resources (5):
+    [activity_3732] 2026-09-09T09:52:26Z | DELETE_RECORD        | deletion_worker -> account_service | account_5521 | SUCCESS | Deletion worker submitted primary profile account_5521 to account_service.
+    [activity_3744] 2026-09-09T11:43:18Z | REDACT_RECORD        | deletion_worker -> support_platform | support_5569 | FAILED | Deletion worker received the final result for support_5569 from support_platform.
+    [activity_3747] 2026-09-09T12:02:47Z | DELETE_RECORD        | deletion_worker -> search_service | search_4013 | FAILED | Deletion worker received the final result for search_4013 from search_service.
+    [activity_3751] 2026-09-09T12:21:17Z | ANONYMIZE_RECORD     | deletion_worker -> analytics_platform | analytics_037 | FAILED | Deletion worker received the final result for analytics_037 from analytics_platform.
+    [activity_3753] 2026-09-09T12:40:46Z | CHECK_DATA_FLOW      | deletion_worker -> integration_service | data_flow_4890 | SUCCESS | Connector status check confirmed that data flow data_flow_4890 remains enabled.
+
+=======================================================
+CASE: case_19 | User: user_19 (e.varga90@yahoo.com) | Reported: PARTIALLY_COMPLETE @ 2026-08-19T12:00:00Z | Audit: 2026-09-15T12:00:00Z
+Status: INCOMPLETE | Steps Count: 8
+  Step 1  | FINDING      | search_service       | search_6083          | REPORT_REMAINING_RECORD   | PRESENT    | evidence_01
+  Step 2  | FINDING      | support_platform     | support_9553         | REPORT_EXPOSED_PII        | PRESENT    | evidence_01
+  Step 3  | REMEDIATION  | search_service       | search_6083          | DELETE_RECORD             | ABSENT     | 
+  Step 4  | REMEDIATION  | support_platform     | support_9553         | REDACT_RECORD             | REDACTED   | 
+  Step 5  | VERIFICATION | account_service      | account_9102         | VERIFY_RECORD_ABSENT      | ABSENT     | 
+  Step 6  | VERIFICATION | search_service       | search_6083          | VERIFY_RECORD_ABSENT      | ABSENT     | 
+  Step 7  | VERIFICATION | security_service     | audit_record_6793    | VERIFY_RECORD_PRESENT     | PRESENT    | 
+  Step 8  | VERIFICATION | support_platform     | support_9553         | VERIFY_RECORD_REDACTED    | REDACTED   | 
+  System activities for these resources (3):
+    [activity_3323] 2026-08-19T10:52:22Z | DELETE_RECORD        | deletion_worker -> account_service | account_9102 | PARTIAL | Deletion worker submitted primary profile account_9102 to account_service.
+    [activity_3329] 2026-08-19T12:56:14Z | REDACT_RECORD        | deletion_worker -> support_platform | support_9553 | FAILED | Deletion worker received the final result for support_9553 from support_platform.
+    [activity_3332] 2026-08-19T13:15:43Z | DELETE_RECORD        | deletion_worker -> search_service | search_6083 | FAILED | Deletion worker received the final result for search_6083 from search_service.
+
+=======================================================
+CASE: case_20 | User: user_48 (akosua.gyasi@gmail.com) | Reported: NOT_STARTED @ 2026-09-09T11:00:00Z | Audit: 2026-09-26T11:00:00Z
+Status: INCOMPLETE | Steps Count: 8
+  Step 1  | FINDING      | search_service       | search_4262          | REPORT_REMAINING_RECORD   | PRESENT    | evidence_94
+  Step 2  | FINDING      | integration_service  | data_flow_1770       | REPORT_ACTIVE_DATA_FLOW   | ACTIVE     | evidence_94
+  Step 3  | REMEDIATION  | integration_service  | data_flow_1770       | DISABLE_DATA_FLOW         | DISABLED   | 
+  Step 4  | REMEDIATION  | search_service       | search_4262          | DELETE_RECORD             | ABSENT     | 
+  Step 5  | VERIFICATION | account_service      | account_5037         | VERIFY_RECORD_ABSENT      | ABSENT     | 
+  Step 6  | VERIFICATION | search_service       | search_4262          | VERIFY_RECORD_ABSENT      | ABSENT     | 
+  Step 7  | VERIFICATION | security_service     | audit_record_5569    | VERIFY_RECORD_PRESENT     | PRESENT    | 
+  Step 8  | VERIFICATION | integration_service  | data_flow_1770       | VERIFY_DATA_FLOW_DISABLED | DISABLED   | 
+  System activities for these resources (3):
+    [activity_3734] 2026-09-09T10:14:55Z | DELETE_RECORD        | deletion_worker -> account_service | account_5037 | FAILED | Deletion worker submitted primary profile account_5037 to account_service.
+    [activity_3745] 2026-09-09T11:52:47Z | CHECK_DATA_FLOW      | deletion_worker -> integration_service | data_flow_1770 | SUCCESS | Connector status check confirmed that data flow data_flow_1770 remains enabled.
+    [activity_3750] 2026-09-09T12:11:17Z | DELETE_RECORD        | deletion_worker -> search_service | search_4262 | FAILED | Deletion worker received the final result for search_4262 from search_service.
+
+=======================================================
+CASE: case_21 | User: user_21 (amara-okeke@proton.me) | Reported: COMPLETE @ 2026-09-05T12:00:00Z | Audit: 2026-09-15T12:00:00Z
+Status: COMPLETE | Steps Count: 3
+  Step 1  | VERIFICATION | account_service      | account_6440         | VERIFY_RECORD_ABSENT      | ABSENT     | evidence_92
+  Step 2  | VERIFICATION | security_service     | audit_record_3737    | VERIFY_RECORD_PRESENT     | PRESENT    | evidence_92
+  Step 3  | VERIFICATION | analytics_platform   | analytics_5335       | VERIFY_RECORD_ANONYMIZED  | ANONYMIZED | evidence_92
+  System activities for these resources (2):
+    [activity_3661] 2026-09-05T11:01:53Z | DELETE_RECORD        | deletion_worker -> account_service | account_6440 | SUCCESS | Deletion worker submitted primary profile account_6440 to account_service.
+    [activity_3665] 2026-09-05T11:31:34Z | ANONYMIZE_RECORD     | deletion_worker -> analytics_platform | analytics_5335 | SUCCESS | Policy action completed for analytics_5335.
+
+=======================================================
+CASE: case_22 | User: user_51 (seoyeon-han@gmail.com) | Reported: COMPLETE @ 2026-09-01T10:00:00Z | Audit: 2026-09-21T10:00:00Z
+Status: INCOMPLETE | Steps Count: 8
+  Step 1  | FINDING      | search_service       | search_8911          | REPORT_REMAINING_RECORD   | PRESENT    | evidence_05
+  Step 2  | FINDING      | analytics_platform   | analytics_4440       | REPORT_EXPOSED_PII        | PRESENT    | evidence_05
+  Step 3  | REMEDIATION  | search_service       | search_8911          | DELETE_RECORD             | ABSENT     | 
+  Step 4  | REMEDIATION  | analytics_platform   | analytics_4440       | ANONYMIZE_RECORD          | ANONYMIZED | 
+  Step 5  | VERIFICATION | account_service      | account_4990         | VERIFY_RECORD_ABSENT      | ABSENT     | 
+  Step 6  | VERIFICATION | search_service       | search_8911          | VERIFY_RECORD_ABSENT      | ABSENT     | 
+  Step 7  | VERIFICATION | security_service     | audit_record_3482    | VERIFY_RECORD_PRESENT     | PRESENT    | 
+  Step 8  | VERIFICATION | analytics_platform   | analytics_4440       | VERIFY_RECORD_ANONYMIZED  | ANONYMIZED | 
+  System activities for these resources (3):
+    [activity_3573] 2026-09-01T09:12:11Z | DELETE_RECORD        | deletion_worker -> account_service | account_4990 | SUCCESS | Deletion worker submitted primary profile account_4990 to account_service.
+    [activity_3578] 2026-09-01T10:50:03Z | ANONYMIZE_RECORD     | deletion_worker -> analytics_platform | analytics_4440 | FAILED | Deletion worker received the final result for analytics_4440 from analytics_platform.
+    [activity_3581] 2026-09-01T11:09:32Z | DELETE_RECORD        | deletion_worker -> search_service | search_8911 | FAILED | Deletion worker received the final result for search_8911 from search_service.
+
+=======================================================
+CASE: case_23 | User: user_23 (thandiwe.m6866@zoho.com) | Reported: NOT_STARTED @ 2026-09-05T12:00:00Z | Audit: 2026-09-15T12:00:00Z
+Status: INCOMPLETE | Steps Count: 8
+  Step 1  | FINDING      | export_service       | export_7364          | REPORT_REMAINING_RECORD   | PRESENT    | evidence_92
+  Step 2  | FINDING      | search_service       | search_898           | REPORT_REMAINING_RECORD   | PRESENT    | evidence_92
+  Step 3  | REMEDIATION  | export_service       | export_7364          | DELETE_RECORD             | ABSENT     | 
+  Step 4  | REMEDIATION  | search_service       | search_898           | DELETE_RECORD             | ABSENT     | 
+  Step 5  | VERIFICATION | account_service      | account_410          | VERIFY_RECORD_ABSENT      | ABSENT     | 
+  Step 6  | VERIFICATION | export_service       | export_7364          | VERIFY_RECORD_ABSENT      | ABSENT     | 
+  Step 7  | VERIFICATION | search_service       | search_898           | VERIFY_RECORD_ABSENT      | ABSENT     | 
+  Step 8  | VERIFICATION | security_service     | audit_record_4128    | VERIFY_RECORD_PRESENT     | PRESENT    | 
+  System activities for these resources (3):
+    [activity_3662] 2026-09-05T11:10:55Z | DELETE_RECORD        | deletion_worker -> account_service | account_410 | FAILED | Deletion worker submitted primary profile account_410 to account_service.
+    [activity_3667] 2026-09-05T12:38:47Z | DELETE_RECORD        | deletion_worker -> export_service | export_7364 | FAILED | Deletion worker received the final result for export_7364 from export_service.
+    [activity_3671] 2026-09-05T12:57:17Z | DELETE_RECORD        | deletion_worker -> search_service | search_898 | FAILED | Deletion worker received the final result for search_898 from search_service.
+
+=======================================================
+CASE: case_24 | User: user_24 (keiko.nakamura@gmail.com) | Reported: COMPLETE @ 2026-09-02T12:00:00Z | Audit: 2026-09-15T12:00:00Z
+Status: INCOMPLETE | Steps Count: 7
+  Step 1  | FINDING      | account_service      | account_5334         | REPORT_REMAINING_RECORD   | PRESENT    | evidence_92
+  Step 2  | FINDING      | search_service       | search_5577          | REPORT_REMAINING_RECORD   | PRESENT    | evidence_92
+  Step 3  | REMEDIATION  | account_service      | account_5334         | DELETE_RECORD             | ABSENT     | 
+  Step 4  | REMEDIATION  | search_service       | search_5577          | DELETE_RECORD             | ABSENT     | 
+  Step 5  | VERIFICATION | account_service      | account_5334         | VERIFY_RECORD_ABSENT      | ABSENT     | 
+  Step 6  | VERIFICATION | search_service       | search_5577          | VERIFY_RECORD_ABSENT      | ABSENT     | 
+  Step 7  | VERIFICATION | security_service     | audit_record_7095    | VERIFY_RECORD_PRESENT     | PRESENT    | 
+  System activities for these resources (3):
+    [activity_3599] 2026-09-02T10:59:41Z | DELETE_RECORD        | deletion_worker -> account_service | account_5334 | SUCCESS | Deletion worker submitted primary profile account_5334 to account_service.
+    [activity_3608] 2026-09-02T12:45:33Z | SYNC_RECORD          | account_service -> account_replication_cluster | account_5334 | SUCCESS | Replication worker reported its final checkpoint for account_5334.
+    [activity_3610] 2026-09-02T13:04:03Z | DELETE_RECORD        | deletion_worker -> search_service | search_5577 | SUCCESS | Deletion worker received the final result for search_5577 from search_service.
+
+=======================================================
+CASE: case_25 | User: user_25 (s.yoon04@gmail.com) | Reported: NOT_STARTED @ 2026-09-02T12:00:00Z | Audit: 2026-09-15T12:00:00Z
+Status: COMPLETE | Steps Count: 3
+  Step 1  | VERIFICATION | account_service      | account_3136         | VERIFY_RECORD_ABSENT      | ABSENT     | evidence_92
+  Step 2  | VERIFICATION | security_service     | audit_record_451     | VERIFY_RECORD_PRESENT     | PRESENT    | evidence_92
+  Step 3  | VERIFICATION | analytics_platform   | analytics_1895       | VERIFY_RECORD_ANONYMIZED  | ANONYMIZED | evidence_92
+  System activities for these resources (2):
+    [activity_3597] 2026-09-02T10:48:27Z | DELETE_RECORD        | deletion_worker -> account_service | account_3136 | FAILED | Deletion worker submitted primary profile account_3136 to account_service.
+    [activity_3602] 2026-09-02T11:31:08Z | ANONYMIZE_RECORD     | deletion_worker -> analytics_platform | analytics_1895 | SUCCESS | Policy action completed for analytics_1895.
+
+=======================================================
+CASE: case_26 | User: user_26 (almeida.mariana@gmail.com) | Reported: NOT_STARTED @ 2026-09-02T12:00:00Z | Audit: 2026-09-15T12:00:00Z
+Status: COMPLETE | Steps Count: 6
+  Step 1  | VERIFICATION | account_service      | account_5684         | VERIFY_RECORD_ABSENT      | ABSENT     | evidence_92
+  Step 2  | VERIFICATION | security_service     | audit_record_5416    | VERIFY_RECORD_PRESENT     | PRESENT    | evidence_92
+  Step 3  | VERIFICATION | support_platform     | support_4715         | VERIFY_RECORD_REDACTED    | REDACTED   | evidence_92
+  Step 4  | VERIFICATION | analytics_platform   | analytics_4566       | VERIFY_RECORD_ANONYMIZED  | ANONYMIZED | evidence_92
+  Step 5  | VERIFICATION | integration_service  | data_flow_6244       | VERIFY_DATA_FLOW_DISABLED | DISABLED   | evidence_92
+  Step 6  | VERIFICATION | backup_service       | backup_3120          | VERIFY_RESTORE_BLOCKED    | BLOCKED    | evidence_92
+  System activities for these resources (5):
+    [activity_3600] 2026-09-02T11:08:43Z | DELETE_RECORD        | deletion_worker -> account_service | account_5684 | FAILED | Deletion worker submitted primary profile account_5684 to account_service.
+    [activity_3603] 2026-09-02T11:31:24Z | ANONYMIZE_RECORD     | deletion_worker -> analytics_platform | analytics_4566 | SUCCESS | Policy action completed for analytics_4566.
+    [activity_3605] 2026-09-02T11:38:53Z | REDACT_RECORD        | deletion_worker -> support_platform | support_4715 | SUCCESS | Policy action completed for support_4715.
+    [activity_3606] 2026-09-02T11:45:23Z | DISABLE_DATA_FLOW    | deletion_worker -> integration_service | data_flow_6244 | SUCCESS | Policy action completed for data_flow_6244.
+    [activity_3607] 2026-09-02T11:52:52Z | BLOCK_RESTORE        | deletion_worker -> backup_service | backup_3120 | SUCCESS | Policy action completed for backup_3120.
+
+=======================================================
+CASE: case_27 | User: user_27 (ananya-nair@gmail.com) | Reported: COMPLETE @ 2026-08-30T12:00:00Z | Audit: 2026-09-15T12:00:00Z
+Status: COMPLETE | Steps Count: 6
+  Step 1  | VERIFICATION | account_service      | account_3866         | VERIFY_RECORD_ABSENT      | ABSENT     | evidence_92
+  Step 2  | VERIFICATION | security_service     | audit_record_3830    | VERIFY_RECORD_PRESENT     | PRESENT    | evidence_92
+  Step 3  | VERIFICATION | support_platform     | support_4707         | VERIFY_RECORD_REDACTED    | REDACTED   | evidence_92
+  Step 4  | VERIFICATION | analytics_platform   | analytics_4574       | VERIFY_RECORD_ANONYMIZED  | ANONYMIZED | evidence_92
+  Step 5  | VERIFICATION | integration_service  | data_flow_2295       | VERIFY_DATA_FLOW_DISABLED | DISABLED   | evidence_92
+  Step 6  | VERIFICATION | backup_service       | backup_5970          | VERIFY_RESTORE_BLOCKED    | BLOCKED    | evidence_92
+  System activities for these resources (5):
+    [activity_3530] 2026-08-30T10:57:28Z | DELETE_RECORD        | deletion_worker -> account_service | account_3866 | SUCCESS | Deletion worker submitted primary profile account_3866 to account_service.
+    [activity_3533] 2026-08-30T11:31:09Z | ANONYMIZE_RECORD     | deletion_worker -> analytics_platform | analytics_4574 | SUCCESS | Policy action completed for analytics_4574.
+    [activity_3536] 2026-08-30T11:38:38Z | REDACT_RECORD        | deletion_worker -> support_platform | support_4707 | SUCCESS | Policy action completed for support_4707.
+    [activity_3537] 2026-08-30T11:45:08Z | DISABLE_DATA_FLOW    | deletion_worker -> integration_service | data_flow_2295 | SUCCESS | Policy action completed for data_flow_2295.
+    [activity_3540] 2026-08-30T11:52:37Z | BLOCK_RESTORE        | deletion_worker -> backup_service | backup_5970 | SUCCESS | Policy action completed for backup_5970.
+
+=======================================================
+CASE: case_28 | User: user_28 (smartinez6461@gmail.com) | Reported: NOT_STARTED @ 2026-08-30T12:00:00Z | Audit: 2026-09-15T12:00:00Z
+Status: COMPLETE | Steps Count: 6
+  Step 1  | VERIFICATION | account_service      | account_5482         | VERIFY_RECORD_ABSENT      | ABSENT     | evidence_92
+  Step 2  | VERIFICATION | security_service     | audit_record_9265    | VERIFY_RECORD_PRESENT     | PRESENT    | evidence_92
+  Step 3  | VERIFICATION | support_platform     | support_2351         | VERIFY_RECORD_REDACTED    | REDACTED   | evidence_92
+  Step 4  | VERIFICATION | analytics_platform   | analytics_6077       | VERIFY_RECORD_ANONYMIZED  | ANONYMIZED | evidence_92
+  Step 5  | VERIFICATION | integration_service  | data_flow_2337       | VERIFY_DATA_FLOW_DISABLED | DISABLED   | evidence_92
+  Step 6  | VERIFICATION | backup_service       | backup_838           | VERIFY_RESTORE_BLOCKED    | BLOCKED    | evidence_92
+  System activities for these resources (5):
+    [activity_3529] 2026-08-30T10:46:13Z | DELETE_RECORD        | deletion_worker -> account_service | account_5482 | FAILED | Deletion worker submitted primary profile account_5482 to account_service.
+    [activity_3534] 2026-08-30T11:31:53Z | ANONYMIZE_RECORD     | deletion_worker -> analytics_platform | analytics_6077 | SUCCESS | Policy action completed for analytics_6077.
+    [activity_3535] 2026-08-30T11:38:23Z | REDACT_RECORD        | deletion_worker -> support_platform | support_2351 | SUCCESS | Policy action completed for support_2351.
+    [activity_3538] 2026-08-30T11:45:52Z | DISABLE_DATA_FLOW    | deletion_worker -> integration_service | data_flow_2337 | SUCCESS | Policy action completed for data_flow_2337.
+    [activity_3539] 2026-08-30T11:52:22Z | BLOCK_RESTORE        | deletion_worker -> backup_service | backup_838 | SUCCESS | Policy action completed for backup_838.
+
+=======================================================
+CASE: case_29 | User: user_29 (noah.f438085@outlook.com) | Reported: NOT_STARTED @ 2026-08-30T12:00:00Z | Audit: 2026-09-15T12:00:00Z
+Status: INCOMPLETE | Steps Count: 14
+  Step 1  | FINDING      | search_service       | search_1993          | REPORT_REMAINING_RECORD   | PRESENT    | evidence_92
+  Step 2  | FINDING      | analytics_platform   | analytics_5208       | REPORT_EXPOSED_PII        | PRESENT    | evidence_92
+  Step 3  | FINDING      | support_platform     | support_5281         | REPORT_EXPOSED_PII        | PRESENT    | evidence_92
+  Step 4  | FINDING      | integration_service  | data_flow_3827       | REPORT_ACTIVE_DATA_FLOW   | ACTIVE     | evidence_92
+  Step 5  | REMEDIATION  | integration_service  | data_flow_3827       | DISABLE_DATA_FLOW         | DISABLED   | 
+  Step 6  | REMEDIATION  | search_service       | search_1993          | DELETE_RECORD             | ABSENT     | 
+  Step 7  | REMEDIATION  | support_platform     | support_5281         | REDACT_RECORD             | REDACTED   | 
+  Step 8  | REMEDIATION  | analytics_platform   | analytics_5208       | ANONYMIZE_RECORD          | ANONYMIZED | 
+  Step 9  | VERIFICATION | account_service      | account_7012         | VERIFY_RECORD_ABSENT      | ABSENT     | 
+  Step 10 | VERIFICATION | search_service       | search_1993          | VERIFY_RECORD_ABSENT      | ABSENT     | 
+  Step 11 | VERIFICATION | security_service     | audit_record_3954    | VERIFY_RECORD_PRESENT     | PRESENT    | 
+  Step 12 | VERIFICATION | support_platform     | support_5281         | VERIFY_RECORD_REDACTED    | REDACTED   | 
+  Step 13 | VERIFICATION | analytics_platform   | analytics_5208       | VERIFY_RECORD_ANONYMIZED  | ANONYMIZED | 
+  Step 14 | VERIFICATION | integration_service  | data_flow_3827       | VERIFY_DATA_FLOW_DISABLED | DISABLED   | 
+  System activities for these resources (5):
+    [activity_3532] 2026-08-30T11:06:57Z | DELETE_RECORD        | deletion_worker -> account_service | account_7012 | FAILED | Deletion worker submitted primary profile account_7012 to account_service.
+    [activity_3541] 2026-08-30T12:57:49Z | CHECK_DATA_FLOW      | deletion_worker -> integration_service | data_flow_3827 | SUCCESS | Connector status check confirmed that data flow data_flow_3827 remains enabled.
+    [activity_3542] 2026-08-30T13:16:19Z | DELETE_RECORD        | deletion_worker -> search_service | search_1993 | FAILED | Deletion worker received the final result for search_1993 from search_service.
+    [activity_3543] 2026-08-30T13:35:48Z | REDACT_RECORD        | deletion_worker -> support_platform | support_5281 | FAILED | Deletion worker received the final result for support_5281 from support_platform.
+    [activity_3544] 2026-08-30T13:54:18Z | ANONYMIZE_RECORD     | deletion_worker -> analytics_platform | analytics_5208 | FAILED | Deletion worker received the final result for analytics_5208 from analytics_platform.
+
+=======================================================
+CASE: case_30 | User: user_30 (camille.bernard86@outlook.com) | Reported: COMPLETE @ 2026-08-27T12:00:00Z | Audit: 2026-09-15T12:00:00Z
+Status: INCOMPLETE | Steps Count: 14
+  Step 1  | FINDING      | search_service       | search_9359          | REPORT_REMAINING_RECORD   | PRESENT    | evidence_92
+  Step 2  | FINDING      | analytics_platform   | analytics_3697       | REPORT_EXPOSED_PII        | PRESENT    | evidence_92
+  Step 3  | FINDING      | support_platform     | support_6477         | REPORT_EXPOSED_PII        | PRESENT    | evidence_92
+  Step 4  | FINDING      | integration_service  | data_flow_8524       | REPORT_ACTIVE_DATA_FLOW   | ACTIVE     | evidence_92
+  Step 5  | REMEDIATION  | integration_service  | data_flow_8524       | DISABLE_DATA_FLOW         | DISABLED   | 
+  Step 6  | REMEDIATION  | search_service       | search_9359          | DELETE_RECORD             | ABSENT     | 
+  Step 7  | REMEDIATION  | support_platform     | support_6477         | REDACT_RECORD             | REDACTED   | 
+  Step 8  | REMEDIATION  | analytics_platform   | analytics_3697       | ANONYMIZE_RECORD          | ANONYMIZED | 
+  Step 9  | VERIFICATION | account_service      | account_4163         | VERIFY_RECORD_ABSENT      | ABSENT     | 
+  Step 10 | VERIFICATION | search_service       | search_9359          | VERIFY_RECORD_ABSENT      | ABSENT     | 
+  Step 11 | VERIFICATION | security_service     | audit_record_1707    | VERIFY_RECORD_PRESENT     | PRESENT    | 
+  Step 12 | VERIFICATION | support_platform     | support_6477         | VERIFY_RECORD_REDACTED    | REDACTED   | 
+  Step 13 | VERIFICATION | analytics_platform   | analytics_3697       | VERIFY_RECORD_ANONYMIZED  | ANONYMIZED | 
+  Step 14 | VERIFICATION | integration_service  | data_flow_8524       | VERIFY_DATA_FLOW_DISABLED | DISABLED   | 
+  System activities for these resources (5):
+    [activity_3465] 2026-08-27T10:55:42Z | DELETE_RECORD        | deletion_worker -> account_service | account_4163 | SUCCESS | Deletion worker submitted primary profile account_4163 to account_service.
+    [activity_3467] 2026-08-27T12:41:34Z | CHECK_DATA_FLOW      | deletion_worker -> integration_service | data_flow_8524 | SUCCESS | Connector status check confirmed that data flow data_flow_8524 remains enabled.
+    [activity_3468] 2026-08-27T13:00:04Z | DELETE_RECORD        | deletion_worker -> search_service | search_9359 | FAILED | Deletion worker received the final result for search_9359 from search_service.
+    [activity_3469] 2026-08-27T13:19:33Z | REDACT_RECORD        | deletion_worker -> support_platform | support_6477 | FAILED | Deletion worker received the final result for support_6477 from support_platform.
+    [activity_3470] 2026-08-27T13:38:03Z | ANONYMIZE_RECORD     | deletion_worker -> analytics_platform | analytics_3697 | FAILED | Deletion worker received the final result for analytics_3697 from analytics_platform.
+
+=======================================================
+CASE: case_31 | User: user_541 (a.eze08@gmail.com) | Reported: COMPLETE @ 2026-09-06T12:00:00Z | Audit: 2026-09-15T12:00:00Z
+Status: COMPLETE | Steps Count: 3
+  Step 1  | VERIFICATION | account_service      | account_4857         | VERIFY_RECORD_ABSENT      | ABSENT     | evidence_51
+  Step 2  | VERIFICATION | security_service     | audit_record_6909    | VERIFY_RECORD_PRESENT     | PRESENT    | evidence_51
+  Step 3  | VERIFICATION | identity_service     | tombstone_440        | VERIFY_RECORD_REDACTED    | REDACTED   | evidence_51
+  System activities for these resources (2):
+    [activity_3682] 2026-09-06T10:45:58Z | DELETE_RECORD        | deletion_worker -> account_service | account_4857 | SUCCESS | Deletion worker submitted primary profile account_4857 to account_service.
+    [activity_3687] 2026-09-06T11:31:39Z | REDACT_RECORD        | deletion_worker -> identity_service | tombstone_440 | SUCCESS | Policy action completed for tombstone_440.
+
+=======================================================
+CASE: case_32 | User: user_542 (addo.kofi@gmail.com) | Reported: PARTIALLY_COMPLETE @ 2026-09-06T12:00:00Z | Audit: 2026-09-15T12:00:00Z
+Status: INCOMPLETE | Steps Count: 5
+  Step 1  | FINDING      | identity_service     | tombstone_9178       | REPORT_EXPOSED_PII        | PRESENT    | evidence_51
+  Step 2  | REMEDIATION  | identity_service     | tombstone_9178       | REDACT_RECORD             | REDACTED   | 
+  Step 3  | VERIFICATION | account_service      | account_8858         | VERIFY_RECORD_ABSENT      | ABSENT     | 
+  Step 4  | VERIFICATION | security_service     | audit_record_7068    | VERIFY_RECORD_PRESENT     | PRESENT    | 
+  Step 5  | VERIFICATION | identity_service     | tombstone_9178       | VERIFY_RECORD_REDACTED    | REDACTED   | 
+  System activities for these resources (2):
+    [activity_3685] 2026-09-06T11:05:15Z | DELETE_RECORD        | deletion_worker -> account_service | account_8858 | PARTIAL | Deletion worker submitted primary profile account_8858 to account_service.
+    [activity_3692] 2026-09-06T13:00:07Z | REDACT_RECORD        | deletion_worker -> identity_service | tombstone_9178 | FAILED | Deletion worker received the final result for tombstone_9178 from identity_service.

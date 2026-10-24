@@ -1,0 +1,7 @@
+Successfully scheduled one-shot timer.
+Expected to fire at: 2026-10-24T21:42:40+05:30
+Prompt: Wait for remaining images in OCR cache
+Early Termination: d27db20e-39f1-414d-873b-8b6d6163c2d9/task-341
+
+[2026-10-24T21:42:35+05:30] Still waiting. Remaining time: 5s
+[2026-10-24T21:42:40+05:30] Timer fired.

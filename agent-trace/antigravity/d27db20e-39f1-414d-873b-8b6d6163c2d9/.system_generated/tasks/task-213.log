@@ -1,0 +1,209 @@
+
+==========================================
+IMAGE: account_admin_console_20260926.png (found 73 text boxes)
+  [1.00] Northstar Shop
+  [1.00] CustomerOperations
+  [0.97] Search customers,orders,tickets..
+  [0.97] Production Help
+  [0.97] Northstar Shop/ Customer Operations/ Customers
+  [1.00] Customers
+  [0.96] Haruka Sato
+  [0.98] Silver
+  [1.00] Filter
+  [0.99] Actions
+  [1.00] Orders
+  [0.99] user_11�account_5762
+  [1.00] Overview
+  [1.00] Orders
+  [1.00] Addresses
+  ... and 58 more lines
+
+==========================================
+IMAGE: analytics_profile_view_20260713.png (found 90 text boxes)
+  [1.00] Northstar Shop
+  [0.97] Pulse Analytics
+  [0.96] Search users,products, orders or events...
+  [0.97] Production Help
+  [0.98] Northstar Shop / Pulse Analytics / Users
+  [1.00] Overview
+  [0.99] Omar Darwish
+  [0.95] Last 90 days
+  [0.99] Filter
+  [1.00] Export
+  [0.94] Actions
+  [1.00] Real-time
+  [0.98] user_20 - analytics_7438 - darwish.omar@icloud.com
+  [0.94] Event timeline
+  [1.00] Sessions (12)
+  ... and 75 more lines
+
+==========================================
+IMAGE: backup_restore_console_20260429.png (found 95 text boxes)
+  [1.00] Northstar Shop
+  [0.99] VaultRecoveryManager
+  [0.97] Search archives, accounts or restore requests...
+  [0.97] Production Help
+  [0.97] Northstar Shop/Vault Recovery Manager / Recovery Manager
+  [1.00] Overview
+  [0.99] Customer-platform archives
+  [0.94] Healthy
+  [0.99] Filter
+  [1.00] Export
+  [0.94] Actions
+  [0.97] Recovery Manager
+  [0.96] Northstar Production-weekly snapshots
+  [1.00] Archives
+  [0.97] Recent restores
+  ... and 80 more lines
+
+==========================================
+IMAGE: connector_management_console_20260807.png (found 89 text boxes)
+  [1.00] Northstar Shop
+  [0.99] BridgeOps
+  [0.95] 0Search connectors...
+  [0.97] Production Help
+  [0.98] Northstar Shop/BridgeOps/ Connections
+  [1.00] Connections
+  [1.00] Connections
+  [0.96] 12 connectors
+  [0.93] Filter
+  [1.00] Export
+  [0.94] Actions
+  [1.00] Topology
+  [0.94] PRODUCTION - eu-West - 07Aug 2026 08:00 UTC
+  [1.00] Topology
+  [1.00] Throughput
+  ... and 74 more lines
+
+==========================================
+IMAGE: customer_export_console_20260618.png (found 87 text boxes)
+  [1.00] Northstar Shop
+  [1.00] CustomerDownloadCenter
+  [0.96] oSearch exports...
+  [0.97] Production Help
+  [1.00] CD
+  [0.97] Northstar Shop/ Customer Download Center/ Data exports
+  [1.00] Home
+  [0.98] Data exports
+  [1.00] 4jobs
+  [0.93] Filter
+  [0.91] Export
+  [0.93] Actions
+  [1.00] Orders
+  [0.97] Create and manage customer download packages
+  [1.00] Allexports
+  ... and 72 more lines
+
+==========================================
+IMAGE: deleted_account_reference_20260310.png (found 86 text boxes)
+  [1.00] CustomerReference
+  [1.00] Northstar Shop
+  [1.00] Registry
+  [0.95] Search references, orders, support cases or finance records..
+  [0.97] Production Help
+  [1.00] CR
+  [0.97] Northstar Shop/ Customer Reference Registry / Customer references
+  [1.00] Home
+  [1.00] user_17
+  [0.98] Retained reference
+  [0.93] Filter
+  [1.00] Export
+  [0.99] Actions
+  [0.97] Customer references
+  [0.98] Customer key-Account Platform�eu-west
+  ... and 71 more lines
+
+==========================================
+IMAGE: marketing_profile_console.png (found 77 text boxes)
+  [0.99] Northstar Shop
+  [0.96] Audience Operations
+  [0.98] Search customers,audiences,campaigns...
+  [0.98] Production Help
+  [0.98] Northstar Shop / Audience Operations / Audience Operations
+  [1.00] Home
+  [0.97] Soo-jin Park
+  [1.00] Live
+  [0.99] Filter
+  [0.83] odx
+  [1.00] Actions
+  [0.98] Audience Operations
+  [0.96] marketing_001- sj.park@naver.com � +82 10-5837-9451
+  [0.99] Profile
+  [0.98] Attributes
+  ... and 62 more lines
+
+==========================================
+IMAGE: object_storage_browser_20260213.png (found 107 text boxes)
+  [1.00] Northstar Shop
+  [0.97] Nimbus ObjectStorage
+  [0.94] oSearchobjectsbyname orprefi...
+  [0.97] Production Help
+  [0.76] NO
+  [0.99] Northstar Shop / Nimbus Object Storage / northstar-customer-data
+  [0.99] Buckets
+  [1.00] northstar-customer-data
+  [0.99] 8objects
+  [0.99] Filter
+  [1.00] Export
+  [0.94] Actions
+  [0.94] Access policies
+  [1.00] eu-west-1/support-attachments/2026/02
+  [0.99] Objects
+  ... and 92 more lines
+
+==========================================
+IMAGE: search_index_inspector_20260901.png (found 70 text boxes)
+  [1.00] Northstar Shop
+  [0.96] Search Console
+  [0.93] 0email:g.silva76@gmail.com
+  [0.97] Production Help
+  [0.97] Northstar Shop/ Search Console / Customer Search
+  [1.00] CustomerSearch
+  [0.98] Customer Search
+  [1.00] 2hits
+  [0.93] Filter
+  [1.00] Export
+  [0.99] Actions
+  [0.97] Product Search
+  [0.97] customer_directory_v3 / prod-eu
+  [0.97] Results (2)
+  [1.00] Query details
+  ... and 55 more lines
+
+==========================================
+IMAGE: security_audit_explorer_20260905.png (found 106 text boxes)
+  [1.00] Northstar Shop
+  [0.99] Sentinel
+  [0.95] Search events,users,IP addresses or reference...
+  [0.97] Production Help
+  [0.97] Northstar Shop / Sentinel / Account events
+  [1.00] Overview
+  [0.96] Account events
+  [0.96] 6 signed events
+  [0.90] Filter
+  [0.99] Actions
+  [1.00] Threats
+  [0.95] Subject filter:user_03�18-26Aug 2026UTC
+  [0.99] Events (6)
+  [0.99] Timeline
+  [0.99] Integrity
+  ... and 91 more lines
+
+==========================================
+IMAGE: support_ticket_console_20260524.png (found 74 text boxes)
+  [1.00] Northstar Shop
+  [0.97] Helpline Console
+  [0.96] Search tickets,customers,orders..
+  [0.97] Production Help
+  [0.98] HC
+  [0.97] Northstar Shop / Helpline Console / Inbox
+  [0.99] Inbox
+  [0.94] CS-5034�Where ismy delivery?
+  [0.96] SLA 01:42
+  [1.00] Filter
+  [0.99] Actions
+  [0.99] My tickets
+  [0.96] support_1034 - Kofi Agyeman - Normal priority
+  [1.00] Conversation
+  [0.96] Internal notes
+  ... and 59 more lines

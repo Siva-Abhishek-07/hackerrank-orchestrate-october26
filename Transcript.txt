@@ -1,0 +1,235 @@
+HACKERRANK ORCHESTRATE — PROJECT ACTIVITY TRANSCRIPT
+Challenge: Ghost Data Still Exists
+Transcript type: Reconstructed record from the prompt and execution details available to the user.
+Important limitation: This is NOT an original/exported Antigravity conversation transcript. Missing Antigravity turns have not been invented. Confirm with the challenge organizer whether this reconstructed record is acceptable.
+
+================================================================================
+1. ORIGINAL USER PROMPT PROVIDED TO ANTIGRAVITY
+================================================================================
+
+You are a senior AI engineer working on the HackerRank Orchestrate challenge, "Ghost Data Still Exists."
+
+Your task is to build a complete, evidence-driven AI deletion-audit agent that satisfies every requirement in the repository's problem_statement.md.
+
+PROJECT INSTRUCTIONS
+
+1. Before writing code, inspect:
+   - README.md
+   - AGENTS.md
+   - CLAUDE.md
+   - agent_trace_instructions.md
+   - problem_statement.md
+   - All files in dataset/
+   - The existing code/ directory
+
+2. Understand the schemas and relationships among:
+   - deletion_requests.csv
+   - sample_deletion_requests.csv
+   - sample_output.csv
+   - user_identities.csv
+   - user_audit_log.csv
+   - system_activity.csv
+   - deletion_rules.csv
+   - evidence_files.csv
+   - output.csv
+   - All files under dataset/evidence/
+
+3. Inspect the sample answers and determine the expected output structure and decision rules. Never hardcode case-specific answers or infer answers merely from reported workflow statuses.
+
+IMPLEMENTATION REQUIREMENTS
+
+Build a modular Python solution with separate components for:
+- Dataset loading and validation
+- Current and historical identity resolution
+- Evidence retrieval and parsing
+- Temporal evidence filtering using audit_at
+- Policy interpretation
+- Record-state reconstruction
+- Active synchronization and restore-risk detection
+- Deletion status classification
+- Deterministic remediation planning
+- Verification planning
+- Output validation
+- Evaluation and token-usage reporting
+
+DECISION RULES
+
+For every deletion request, classify the case as:
+- COMPLETE
+- INCOMPLETE
+- NOT_APPLICABLE
+
+Respect the exact definitions and allowed operations in problem_statement.md.
+
+For COMPLETE cases, include only evidence-backed verification steps.
+
+For INCOMPLETE cases, include findings, the complete ordered remediation plan, and the verification checks required afterward.
+
+For NOT_APPLICABLE cases, use an empty steps_json array.
+
+Resolve all relevant current and historical identifiers. Evaluate every relevant evidence record, including tombstones, secondary databases, search indexes, support attachments, exports, logs, archives, backups, and restore paths.
+
+Do not treat reported workflow statuses or operation results as authoritative proof.
+
+Respect audit_at. Do not use future evidence to establish a historical state.
+
+Apply deletion_rules.csv to decide whether each record must be deleted, redacted, anonymized, or retained.
+
+Preserve policy-required records. For permitted tombstones, retain stable user references only when allowed and remove prohibited direct identifiers, including name, email, phone, and email hash.
+
+OUTPUT REQUIREMENTS
+
+Generate output.csv containing exactly 518 data rows, one per case in deletion_requests.csv, sorted by case_id.
+
+The header must be:
+case_id,deletion_status,steps_json
+
+Every steps_json value must be valid JSON. Each step must contain:
+step_no, phase, system_id, resource_id, operation, state, evidence_id
+
+Step numbers must start at 1 and increase consecutively.
+
+Order steps by:
+1. Phase: FINDING, REMEDIATION, VERIFICATION
+2. The exact operation order specified in problem_statement.md
+3. system_id ascending
+4. resource_id ascending
+
+For findings and verification steps, cite a valid file_id, activity_id, or audit_id as appropriate.
+
+For proposed remediation and future verification steps in INCOMPLETE cases, use an empty evidence_id.
+
+EVALUATION
+
+Create evaluation/evaluation_report.md containing:
+- Case-level status accuracy
+- Step-level accuracy
+- Field-level accuracy
+- Sequence accuracy
+- At least three additional evaluation cases
+- Failures discovered and improvements made
+
+Use sample_output.csv as the reference for sample-case evaluation. Clearly distinguish sample evaluation from full-dataset evaluation. Do not fabricate evaluation scores.
+
+TOKEN USAGE
+
+Create evaluation/usage_report.md with:
+- Provider and model names
+- Actual model-call count
+- Actual input and output tokens
+- Total and average tokens per request
+- Estimated total and per-request cost
+
+If an LLM is used, instrument actual calls and record usage when available. If token counts or costs cannot be measured, explicitly report that limitation. Do not invent metrics.
+
+IMPLEMENTATION CONSTRAINTS
+
+- Prefer deterministic Python logic for policy decisions, sorting, validation, and output generation.
+- Use an LLM only where it materially improves unstructured evidence interpretation.
+- Do not require a paid API unless explicitly configured.
+- Do not put credentials or API keys in source files or reports.
+- Do not modify the supplied dataset or sample answers.
+- Make the solution runnable from the repository root.
+- Use relative paths and document all dependencies.
+- Add useful error messages and tests.
+- Never delete or overwrite source evidence.
+
+FINAL VALIDATION
+
+Before finishing:
+1. Run the implementation on the entire dataset.
+2. Verify that output.csv has exactly 518 data rows.
+3. Verify every case appears exactly once.
+4. Verify sorting, allowed statuses, allowed operations, phases, evidence references, and consecutive step numbers.
+5. Validate every steps_json value with Python's JSON parser.
+6. Evaluate sample cases against sample_output.csv.
+7. Run all tests and fix discovered defects.
+8. Generate both evaluation reports from actual execution.
+9. Create code.zip containing runnable source code, prompts, configuration, README, and the evaluation directory.
+10. Ensure code.zip includes evaluation/evaluation_report.md and evaluation/usage_report.md.
+
+Work incrementally. Inspect the actual files before making assumptions. Explain important decisions in README.md.
+
+At the end, report the files created, tests executed, evaluation results, any unresolved limitations, and the exact commands needed to reproduce the final run.
+
+Do not stop after creating a plan. Implement, execute, validate, and fix the solution.
+
+================================================================================
+2. EXECUTION DETAILS VERIFIED IN THE AVAILABLE CHAT
+================================================================================
+
+The user ran the following command from the repository root:
+
+Command:
+python .\code\main.py
+
+Observed output:
+Loading dataset files...
+  Requests: 518
+  Users: 850
+  Audit log: 306
+  Evidence files: 94
+  System activities: 4011
+Building identity index...
+Building evidence index...
+Processing 518 cases...
+  Processing case 50/518...
+  Processing case 100/518...
+  Processing case 150/518...
+  Processing case 200/518...
+  Processing case 250/518...
+  Processing case 300/518...
+  Processing case 350/518...
+  Processing case 400/518...
+  Processing case 450/518...
+  Processing case 500/518...
+Writing 518 rows to output.csv...
+Done! Output written to: C:\Users\motup\OneDrive\Desktop\hackerrank-orchestrate-october26\output.csv
+Status distribution: {'COMPLETE': 128, 'INCOMPLETE': 380, 'NOT_APPLICABLE': 10}
+
+The user then ran:
+(Get-Content .\output.csv -TotalCount 1)
+(Import-Csv .\output.csv).Count
+
+Observed output:
+case_id,deletion_status,steps_json
+518
+
+The user also checked for a transcript:
+Get-ChildItem . -Recurse -File -Filter "log.txt" -ErrorAction SilentlyContinue | Select-Object -ExpandProperty FullName
+
+No file path was returned.
+
+The user checked Git history:
+git log --all --oneline -- log.txt
+git ls-files log.txt
+
+Neither command returned a matching entry.
+
+The user listed files under scratch/. The listed files were analysis/debugging/test Python scripts and OCR/cache files; no transcript was listed.
+
+================================================================================
+3. PROJECT PACKAGING / SUBMISSION CHECKS DISCUSSED
+================================================================================
+
+The repository packaging command used was:
+Compress-Archive -Path .\README.md, .\code -DestinationPath .\code.zip -Force
+
+A ZIP listing showed:
+code/main.py
+code/evaluation/evaluation_report.md
+code/evaluation/usage_report.md
+
+A separate check confirmed README.md was also in the ZIP.
+
+The user verified that output.csv has the expected header and 518 rows. These checks confirm the file structure and row count only; they do not establish the prediction accuracy of every case.
+
+The user showed the HackerRank submission workflow. The interface showed separate steps for uploading Code, Output, and Transcript. The Code and Output steps were shown as completed. The transcript step requested a text file containing the full AI chat transcript, including prompts and responses from the agents used.
+
+================================================================================
+4. TRANSCRIPT AVAILABILITY LIMITATION
+================================================================================
+
+The original Antigravity transcript was not found in the project, Git history, or the listed scratch files based on the checks reported in this conversation. This file records the known original prompt and verifiable execution/submission details. It does not reproduce missing Antigravity responses, tool calls, or undocumented changes.
+
+Before uploading this file as the required transcript, ask the challenge organizers whether they accept a reconstructed activity record. Do not describe this file as an original Antigravity transcript.
